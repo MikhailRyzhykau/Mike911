@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Task Test{% endblock %}
+{% block body %} 
+    <body>
+      <div class="container">
+        <div class="row gy-2">
+            <div class="col-md-3">
+                <div class="container">
+                    <button class="add_input, btn btn-primary" onclick="add()">Add input</button>
+                </div>
+            </div>            
+            <div class="col-md-8">                
+                <form action="/" method="post" id="form">
+                    {% csrf_token %}                    
+                    <div class="form-group" id="form-group">
+                        {{ form }}
+                        </br>                            
+                    </div>
+                        </br>              
+                    <button type="submit" class="btn btn-success" id="button-submit">Submit</button>
+                </form>                
+            </div>                   
+            <script src="{% static 'js/add.js' %}"></script>
+        </div>
+      </div>
+    </body>
+{% endblock  %}
